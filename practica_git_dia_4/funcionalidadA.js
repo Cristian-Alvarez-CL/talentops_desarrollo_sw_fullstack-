@@ -1,4 +1,4 @@
 // Se agrega funcion A
 function funcionA() {
-    return 'Hola versión A';
+    return 'Hola - rama feature/funcionalidad-A - versión A';
 }
