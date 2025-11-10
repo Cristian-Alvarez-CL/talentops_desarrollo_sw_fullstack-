@@ -1,4 +1,4 @@
 // Se agrega funcion B
 function funcionA() {
-    return 'Versión A';
+    return 'rama feature/funcionalidad-B - Versión A';
 }
