@@ -1,4 +1,4 @@
 // Se agrega funcion B
-function funcionB() {
+function funcionA() {
     return 'Hola Versión B';
 }
