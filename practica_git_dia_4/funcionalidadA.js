@@ -1,3 +1,4 @@
+// Se agrega funcion A
 function funcionA() {
-    return 'Nace del main - Versión A';
+    return 'Hola - rama feature/funcionalidad-A - versión A';
 }
