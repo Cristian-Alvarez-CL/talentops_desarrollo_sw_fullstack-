@@ -1,0 +1,12 @@
+{
+  "name": "calculadora-app",
+  "version": "1.0.0",
+  "description": "Una calculadora simple con pruebas",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "jest": "30.0.0"
+  }
+}
