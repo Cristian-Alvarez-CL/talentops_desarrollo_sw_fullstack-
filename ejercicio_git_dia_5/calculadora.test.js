@@ -1,4 +1,4 @@
-const Calculator = require('./calculator');
+const Calculator = require('./calculadora');
 
 describe('Calculator', () => {
     let calculator;
@@ -28,22 +28,19 @@ describe('Calculator', () => {
     });
 });
 
-describe('Power function', () => {
+describe('Power function edge cases', () => {
     let calculator;
 
     beforeEach(() => {
         calculator = new Calculator();
     });
 
-    test('calculates positive exponent correctly', () => {
-        expect(calculator.power(2, 3)).toBe(8);
+    test('handles base of zero correctly', () => {
+        expect(calculator.power(0, 5)).toBe(0);
+        expect(calculator.power(0, 0)).toBe(1);
     });
 
-    test('handles zero exponent correctly', () => {
-        expect(calculator.power(5, 0)).toBe(1);
-    });
-
-    test('handles negative exponent correctly', () => {
-        expect(calculator.power(2, -2)).toBe(0.25);
+    test('handles fractional base correctly', () => {
+        expect(calculator.power(4, 0.5)).toBe(2);
     });
 });
