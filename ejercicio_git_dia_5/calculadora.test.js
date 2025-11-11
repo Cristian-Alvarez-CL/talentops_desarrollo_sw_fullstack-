@@ -28,6 +28,26 @@ describe('Calculator', () => {
     });
 });
 
+describe('Power function', () => {
+    let calculator;
+
+    beforeEach(() => {
+        calculator = new Calculator();
+    });
+
+    test('calculates positive exponent correctly', () => {
+        expect(calculator.power(2, 3)).toBe(8);
+    });
+
+    test('handles zero exponent correctly', () => {
+        expect(calculator.power(5, 0)).toBe(1);
+    });
+
+    test('handles negative exponent correctly', () => {
+        expect(calculator.power(2, -2)).toBe(0.25);
+    });
+});
+
 describe('Power function edge cases', () => {
     let calculator;
 
@@ -40,7 +60,13 @@ describe('Power function edge cases', () => {
         expect(calculator.power(0, 0)).toBe(1);
     });
 
-    test('handles fractional base correctly', () => {
-        expect(calculator.power(4, 0.5)).toBe(2);
+    test('handles square roots correctly', () => {
+        expect(calculator.power(4, 0.5)).toBeCloseTo(2);
+        expect(calculator.power(9, 0.5)).toBeCloseTo(3);
+    });
+
+    test('handles cube roots correctly', () => {
+        expect(calculator.power(8, 1/3)).toBeCloseTo(2);
+        expect(calculator.power(27, 1/3)).toBeCloseTo(3);
     });
 });
