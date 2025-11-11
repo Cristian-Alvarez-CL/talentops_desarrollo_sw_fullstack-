@@ -17,6 +17,16 @@ class Calculator {
         }
         return a / b;
     }
+
+    power(base, exponent) {
+        // Implementación básica - solo funciona con exponentes positivos
+        if (exponent === 0) return 1;
+        let result = 1;
+        for (let i = 0; i < exponent; i++) {
+            result *= base;
+        }
+        return result;
+    }
 }
 
 module.exports = Calculator;

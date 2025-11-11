@@ -36,17 +36,14 @@ describe('Power function', () => {
     });
 
     test('calculates positive exponent correctly', () => {
-        // TODO: Implementar test cuando exista la función power
-        // expect(calculator.power(2, 3)).toBe(8);
+        expect(calculator.power(2, 3)).toBe(8);
     });
 
     test('handles zero exponent correctly', () => {
-        // TODO: Implementar test cuando exista la función power
-        // expect(calculator.power(5, 0)).toBe(1);
+        expect(calculator.power(5, 0)).toBe(1);
     });
 
     test('handles negative exponent correctly', () => {
-        // TODO: Implementar test cuando exista la función power
-        // expect(calculator.power(2, -2)).toBe(0.25);
+        expect(calculator.power(2, -2)).toBe(0.25);
     });
 });
