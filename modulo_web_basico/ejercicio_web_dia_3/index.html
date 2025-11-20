@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrativo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="light-theme">
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <h1 class="logo">Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/40" alt="Usuario" class="user-avatar">
+                    <span class="user-name">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <span class="nav-icon">📊</span>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="nav-icon">👥</span>
+                            <span class="nav-text">Usuarios</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="nav-icon">📦</span>
+                            <span class="nav-text">Productos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="nav-icon">💰</span>
+                            <span class="nav-text">Ventas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="nav-icon">📈</span>
+                            <span class="nav-text">Reportes</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="nav-icon">⚙️</span>
+                            <span class="nav-text">Configuración</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h2>Resumen General</h2>
+                <p>Vista general de las métricas y estadísticas</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-info">
+                        <h3>1,254</h3>
+                        <p>Usuarios Activos</p>
+                    </div>
+                    <div class="stat-trend up">+12%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-info">
+                        <h3>$42,580</h3>
+                        <p>Ingresos Totales</p>
+                    </div>
+                    <div class="stat-trend up">+8%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-info">
+                        <h3>324</h3>
+                        <p>Nuevos Pedidos</p>
+                    </div>
+                    <div class="stat-trend down">-3%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-info">
+                        <h3>86%</h3>
+                        <p>Tasa de Conversión</p>
+                    </div>
+                    <div class="stat-trend up">+5%</div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-card">
+                    <h3>Ventas Mensuales</h3>
+                    <div class="chart-container">
+                        <div class="bar-chart">
+                            <div class="bar" style="height: 70%"></div>
+                            <div class="bar" style="height: 85%"></div>
+                            <div class="bar" style="height: 60%"></div>
+                            <div class="bar" style="height: 90%"></div>
+                            <div class="bar" style="height: 75%"></div>
+                            <div class="bar" style="height: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Tráfico por Fuente</h3>
+                    <div class="chart-container">
+                        <div class="pie-chart">
+                            <div class="slice social" style="--percentage: 30;"></div>
+                            <div class="slice direct" style="--percentage: 25;"></div>
+                            <div class="slice email" style="--percentage: 20;"></div>
+                            <div class="slice organic" style="--percentage: 15;"></div>
+                            <div class="slice referral" style="--percentage: 10;"></div>
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color social"></span>
+                                <span>Social (30%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color direct"></span>
+                                <span>Directo (25%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color email"></span>
+                                <span>Email (20%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color organic"></span>
+                                <span>Orgánico (15%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color referral"></span>
+                                <span>Referencia (10%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="activity-section">
+                <h3>Actividad Reciente</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">👤</div>
+                        <div class="activity-content">
+                            <p><strong>Nuevo usuario registrado</strong></p>
+                            <span class="activity-time">Hace 5 minutos</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">💰</div>
+                        <div class="activity-content">
+                            <p><strong>Pedido completado #3245</strong></p>
+                            <span class="activity-time">Hace 12 minutos</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">📦</div>
+                        <div class="activity-content">
+                            <p><strong>Producto agregado al catálogo</strong></p>
+                            <span class="activity-time">Hace 1 hora</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">📊</div>
+                        <div class="activity-content">
+                            <p><strong>Reporte mensual generado</strong></p>
+                            <span class="activity-time">Hace 2 horas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
