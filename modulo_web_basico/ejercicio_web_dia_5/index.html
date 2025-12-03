@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <header class="header">
+            <div class="header-left">
+                <h1 class="logo" aria-label="Productivity Dashboard">
+                    <i class="fas fa-chart-line"></i> Productividad
+                </h1>
+                <p class="current-date" id="currentDate"></p>
+            </div>
+            <div class="header-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo claro/oscuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="stats-badge" id="statsBadge">
+                    <span id="completedTasks">0</span> completadas
+                </div>
+                <div class="user-info">
+                    <span class="user-name">Usuario</span>
+                    <div class="user-avatar">U</div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="left-panel">
+                <section class="card task-manager" aria-labelledby="task-manager-title">
+                    <div class="card-header">
+                        <h2 id="task-manager-title">
+                            <i class="fas fa-tasks"></i> Gestión de Tareas
+                        </h2>
+                        <div class="shortcut-hint">
+                            <kbd>Ctrl</kbd> + <kbd>N</kbd> Nueva tarea
+                        </div>
+                    </div>
+                    
+                    <form class="task-form" id="taskForm">
+                        <div class="form-row">
+                            <input type="text" 
+                                   id="taskTitle" 
+                                   placeholder="¿Qué necesitas hacer?" 
+                                   required
+                                   aria-label="Título de la tarea">
+                            <button type="submit" class="btn-primary" aria-label="Agregar tarea">
+                                <i class="fas fa-plus"></i> Agregar
+                            </button>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="taskPriority">Prioridad:</label>
+                                <select id="taskPriority" aria-label="Prioridad de la tarea">
+                                    <option value="low">Baja</option>
+                                    <option value="medium" selected>Media</option>
+                                    <option value="high">Alta</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="taskDeadline">Fecha límite:</label>
+                                <input type="date" id="taskDeadline" aria-label="Fecha límite de la tarea">
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="task-filters">
+                        <button class="filter-btn active" data-filter="all" aria-label="Mostrar todas las tareas">Todas</button>
+                        <button class="filter-btn" data-filter="pending" aria-label="Mostrar tareas pendientes">Pendientes</button>
+                        <button class="filter-btn" data-filter="completed" aria-label="Mostrar tareas completadas">Completadas</button>
+                        <button class="filter-btn" data-filter="high" aria-label="Mostrar tareas de alta prioridad">
+                            <i class="fas fa-exclamation-circle"></i> Alta
+                        </button>
+                    </div>
+
+                    <div class="empty-state" id="emptyTaskState">
+                        <i class="fas fa-clipboard-list"></i>
+                        <p>No hay tareas pendientes. ¡Agrega una nueva!</p>
+                    </div>
+
+                    <div class="task-list" id="taskList">
+                        </div>
+                </section>
+
+                <section class="card pomodoro" aria-labelledby="pomodoro-title">
+                    <h2 id="pomodoro-title">
+                        <i class="fas fa-clock"></i> Temporizador Pomodoro
+                    </h2>
+                    
+                    <div class="pomodoro-display">
+                        <div class="pomodoro-time" id="pomodoroTime">25:00</div>
+                        <div class="pomodoro-mode" id="pomodoroMode">Modo: Trabajo</div>
+                    </div>
+                    
+                    <div class="pomodoro-controls">
+                        <button class="btn-secondary" id="pomodoroStart" aria-label="Iniciar temporizador">
+                            <i class="fas fa-play"></i> Iniciar
+                        </button>
+                        <button class="btn-secondary" id="pomodoroPause" aria-label="Pausar temporizador" disabled>
+                            <i class="fas fa-pause"></i> Pausar
+                        </button>
+                        <button class="btn-secondary" id="pomodoroReset" aria-label="Reiniciar temporizador">
+                            <i class="fas fa-redo"></i> Reiniciar
+                        </button>
+                    </div>
+                    
+                    <div class="pomodoro-settings">
+                        <div class="setting">
+                            <label for="workDuration">Trabajo (min):</label>
+                            <input type="number" id="workDuration" min="1" max="60" value="25" aria-label="Duración del trabajo en minutos">
+                        </div>
+                        <div class="setting">
+                            <label for="breakDuration">Descanso (min):</label>
+                            <input type="number" id="breakDuration" min="1" max="30" value="5" aria-label="Duración del descanso en minutos">
+                        </div>
+                    </div>
+                    
+                    <div class="pomodoro-stats">
+                        <div class="stat">
+                            <span class="stat-value" id="pomodoroCount">0</span>
+                            <span class="stat-label">Pomodoros hoy</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="totalFocusTime">0</span>
+                            <span class="stat-label">Minutos enfocado</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-panel">
+                <section class="card stats" aria-labelledby="stats-title">
+                    <h2 id="stats-title">
+                        <i class="fas fa-chart-bar"></i> Estadísticas
+                    </h2>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon total-tasks">
+                                <i class="fas fa-list-check"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="totalTasks">0</span>
+                                <span class="stat-label">Total Tareas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon pending-tasks">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="pendingTasks">0</span>
+                                <span class="stat-label">Pendientes</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon completed-tasks">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="completedStats">0</span>
+                                <span class="stat-label">Completadas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon productivity">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="productivityRate">0%</span>
+                                <span class="stat-label">Productividad</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-header">
+                            <h3>Progreso Diario</h3>
+                            <span class="progress-value" id="dailyProgress">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card upcoming-tasks" aria-labelledby="upcoming-tasks-title">
+                    <div class="card-header">
+                        <h2 id="upcoming-tasks-title">
+                            <i class="fas fa-calendar-day"></i> Próximas tareas
+                        </h2>
+                        <div class="shortcut-hint">
+                            <kbd>Ctrl</kbd> + <kbd>D</kbd> Modo oscuro
+                        </div>
+                    </div>
+                    
+                    <div class="empty-state" id="emptyUpcomingState">
+                        <i class="fas fa-calendar-check"></i>
+                        <p>No hay tareas próximas</p>
+                    </div>
+
+                    <div class="upcoming-list" id="upcomingList">
+                        </div>
+                </section>
+
+                <section class="card notifications" aria-labelledby="notifications-title">
+                    <h2 id="notifications-title">
+                        <i class="fas fa-bell"></i> Notificaciones
+                    </h2>
+                    
+                    <div class="notifications-list" id="notificationsList">
+                        <div class="notification" id="pomodoroNotification">
+                            <div class="notification-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="notification-content">
+                                <p class="notification-title">Pomodoro listo</p>
+                                <p class="notification-text">El temporizador está configurado y listo para usar.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="notification" id="welcomeNotification">
+                            <div class="notification-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="notification-content">
+                                <p class="notification-title">¡Bienvenido!</p>
+                                <p class="notification-text">Usa Ctrl+N para agregar una tarea rápidamente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Dashboard de Productividad &copy; <span id="currentYear"></span> | 
+                <span id="taskCounter">0 tareas gestionadas</span> | 
+                <span id="focusTimeCounter">0 minutos de enfoque</span>
+            </p>
+            <div class="footer-links">
+                <button class="footer-link" id="clearDataBtn" aria-label="Limpiar todos los datos">Limpiar datos</button>
+                <button class="footer-link" id="exportDataBtn" aria-label="Exportar datos">Exportar datos</button>
+                <button class="footer-link" id="helpBtn" aria-label="Mostrar ayuda">Ayuda</button>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal" id="helpModal" role="dialog" aria-labelledby="helpModalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="helpModalTitle">Ayuda y Atajos de Teclado</h3>
+                <button class="modal-close" id="closeHelpModal" aria-label="Cerrar ventana de ayuda">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="shortcut-list">
+                    <div class="shortcut-item">
+                        <kbd>Ctrl</kbd> + <kbd>N</kbd>
+                        <span>Agregar nueva tarea</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>Ctrl</kbd> + <kbd>D</kbd>
+                        <span>Alternar modo oscuro/claro</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>Ctrl</kbd> + <kbd>P</kbd>
+                        <span>Iniciar/pausar Pomodoro</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>Escape</kbd>
+                        <span>Cerrar modales/cancelar acciones</span>
+                    </div>
+                </div>
+                <p class="help-text">
+                    Las tareas se guardan automáticamente en tu navegador. 
+                    Puedes filtrarlas por estado o prioridad usando los botones de filtro.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
