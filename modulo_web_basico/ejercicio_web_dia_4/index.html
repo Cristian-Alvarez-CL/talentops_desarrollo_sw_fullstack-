@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tareas Avanzada</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="contenedor">
+    <header>
+      <div class="header-top">
+        <h1><i class="fas fa-tasks"></i> Lista de Tareas Avanzada</h1>
+        <div class="header-controls">
+          <button id="toggle-mode" class="btn btn-icon" title="Cambiar modo claro/oscuro">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button id="export-menu-btn" class="btn btn-icon" title="Importar/Exportar">
+            <i class="fas fa-file-export"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-number" id="total-tareas">0</span>
+          <span>Total</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" id="tareas-completadas">0</span>
+          <span>Completadas</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" id="tareas-pendientes">0</span>
+          <span>Pendientes</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" id="total-categorias">0</span>
+          <span>Categorías</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Menú de exportación/importación (oculto por defecto) -->
+    <div id="export-menu" class="export-menu" style="display: none;">
+      <div class="export-options">
+        <button id="export-json" class="btn btn-secondary">
+          <i class="fas fa-file-code"></i> Exportar JSON
+        </button>
+        <button id="export-csv" class="btn btn-secondary">
+          <i class="fas fa-file-csv"></i> Exportar CSV
+        </button>
+        <label for="import-file" class="btn btn-secondary">
+          <i class="fas fa-file-import"></i> Importar
+          <input type="file" id="import-file" accept=".json,.csv" style="display: none;">
+        </label>
+        <button id="close-export-menu" class="btn btn-icon">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Panel de búsqueda y categorías -->
+    <div class="panel-controls">
+      <div class="search-container">
+        <input type="text" id="input-busqueda" placeholder="Buscar tareas...">
+        <i class="fas fa-search search-icon"></i>
+      </div>
+      
+      <div class="categorias-container">
+        <select id="select-categoria">
+          <option value="todas">Todas las categorías</option>
+        </select>
+        <button id="btn-nueva-categoria" class="btn btn-icon" title="Crear categoría">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Formulario para agregar tareas -->
+    <form class="formulario-agregar" id="form-agregar-tarea">
+      <div class="form-group">
+        <input type="text" id="input-tarea" placeholder="Escribe una nueva tarea..." maxlength="100" required>
+        <select id="select-categoria-tarea">
+          <option value="">Sin categoría</option>
+        </select>
+        <button type="submit" class="btn btn-primary" id="btn-agregar">
+          <i class="fas fa-plus"></i> Agregar
+        </button>
+      </div>
+      <div class="etiquetas-container">
+        <div id="etiquetas-disponibles" class="etiquetas-disponibles"></div>
+        <div id="etiquetas-seleccionadas" class="etiquetas-seleccionadas"></div>
+      </div>
+    </form>
+
+    <!-- Filtros -->
+    <div class="filtros">
+      <button class="filtro-btn active" data-filtro="todas">
+        <i class="fas fa-list"></i> Todas
+      </button>
+      <button class="filtro-btn" data-filtro="pendientes">
+        <i class="fas fa-clock"></i> Pendientes
+      </button>
+      <button class="filtro-btn" data-filtro="completadas">
+        <i class="fas fa-check-circle"></i> Completadas
+      </button>
+    </div>
+
+    <!-- Lista de tareas -->
+    <div class="lista-tareas" id="lista-tareas">
+      <div class="empty-state">
+        <h3><i class="fas fa-clipboard-list"></i> ¡No hay tareas!</h3>
+        <p>Agrega tu primera tarea usando el formulario de arriba.</p>
+        <p class="drag-hint"><i class="fas fa-arrows-alt"></i> Puedes arrastrar y soltar para reordenar las tareas</p>
+      </div>
+    </div>
+
+    <!-- Botón para limpiar completadas -->
+    <div class="acciones-footer">
+      <button type="button" class="btn btn-danger" id="btn-limpiar-completadas" style="display: none;">
+        <i class="fas fa-trash"></i> Limpiar Completadas
+      </button>
+    </div>
+
+    <!-- Modal para crear categoría -->
+    <div id="modal-categoria" class="modal" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Nueva Categoría</h3>
+          <button class="btn btn-icon close-modal">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="input-nueva-categoria" placeholder="Nombre de la categoría" maxlength="20">
+          <input type="color" id="color-nueva-categoria" value="#3498db" title="Color de la categoría">
+        </div>
+        <div class="modal-footer">
+          <button id="btn-cancelar-categoria" class="btn btn-secondary">Cancelar</button>
+          <button id="btn-guardar-categoria" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
