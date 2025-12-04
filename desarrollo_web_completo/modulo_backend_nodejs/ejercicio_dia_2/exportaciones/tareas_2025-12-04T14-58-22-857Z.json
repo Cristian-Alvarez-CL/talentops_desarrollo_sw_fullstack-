@@ -1,0 +1,35 @@
+{
+  "tareas": [
+    {
+      "id": "1764860302845",
+      "titulo": "Aprender Node.js",
+      "descripcion": "Completar tutoriales de fundamentos",
+      "prioridad": "alta",
+      "completada": true,
+      "fechaCreacion": "2025-12-04T14:58:22.845Z",
+      "fechaCompletada": "2025-12-04T14:58:22.851Z"
+    },
+    {
+      "id": "1764860302846",
+      "titulo": "Hacer ejercicio",
+      "descripcion": "30 minutos de cardio",
+      "prioridad": "baja",
+      "completada": true,
+      "fechaCreacion": "2025-12-04T14:58:22.846Z",
+      "fechaCompletada": "2025-12-04T14:58:22.854Z"
+    },
+    {
+      "id": "1764860302847",
+      "titulo": "Revisar código",
+      "descripcion": "Code review del proyecto",
+      "prioridad": "urgente",
+      "completada": false,
+      "fechaCreacion": "2025-12-04T14:58:22.847Z",
+      "fechaCompletada": null
+    }
+  ],
+  "metadata": {
+    "exportado": "2025-12-04T14:58:22.858Z",
+    "cantidad": 3
+  }
+}

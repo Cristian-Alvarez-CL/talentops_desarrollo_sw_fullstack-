@@ -1,0 +1,16 @@
+{
+  "name": "gestor-tareas-modular",
+  "version": "1.0.0",
+  "description": "Sistema modular de gestión de tareas con validación, logging y exportación",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "json2csv": "^6.0.0-alpha.2"
+  }
+}
