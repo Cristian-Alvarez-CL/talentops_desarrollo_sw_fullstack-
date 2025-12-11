@@ -1,0 +1,32 @@
+{
+  "id": "config.json",
+  "ruta": "demo-completa/config.json",
+  "contenido": "{\n  \"sistema\": \"ProcesadorArchivos\",\n  \"version\": \"2.0.0\",\n  \"caracteristicas\": [\n    \"backup\",\n    \"busqueda\",\n    \"cli\",\n    \"procesamiento\"\n  ],\n  \"autor\": \"Equipo Desarrollo\"\n}",
+  "tokens": 11,
+  "frecuencia": {
+    "sistema": 1,
+    "procesadorarchivo": 1,
+    "version": 1,
+    "caracteristica": 1,
+    "backup": 1,
+    "busqueda": 1,
+    "cli": 1,
+    "procesamiento": 1,
+    "autor": 1,
+    "equipo": 1,
+    "desarrollo": 1
+  },
+  "metadatos": {
+    "procesado": true,
+    "estadisticas": {
+      "archivo": "config.json",
+      "ruta": "demo-completa/config.json",
+      "tipo": "JSON",
+      "propiedades": 8,
+      "profundidad": 2,
+      "tamaño": 180,
+      "fechaProcesamiento": "2025-12-11T20:51:41.639Z"
+    },
+    "fechaIndexacion": "2025-12-11T20:51:41.641Z"
+  }
+}

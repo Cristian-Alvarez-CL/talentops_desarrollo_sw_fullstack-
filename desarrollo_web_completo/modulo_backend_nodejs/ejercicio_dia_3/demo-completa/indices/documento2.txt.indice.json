@@ -1,0 +1,82 @@
+{
+  "id": "documento2.txt",
+  "ruta": "demo-completa/documento2.txt",
+  "contenido": "El segundo documento tiene contenido diferente. Aquí hablamos de Node.js, streams, y sistemas de archivos avanzados.",
+  "tokens": 12,
+  "frecuencia": {
+    "segundo": 1,
+    "documento": 1,
+    "tiene": 1,
+    "contenido": 1,
+    "diferente": 1,
+    "aquí": 1,
+    "hablamo": 1,
+    "node": 1,
+    "streams": 1,
+    "sistema": 1,
+    "archivo": 1,
+    "avanzar": 1
+  },
+  "metadatos": {
+    "procesado": true,
+    "estadisticas": {
+      "archivo": "documento2.txt",
+      "ruta": "demo-completa/documento2.txt",
+      "tipo": "texto",
+      "estadisticas": {
+        "lineas": 1,
+        "palabras": 16,
+        "caracteres": 116,
+        "oraciones": 3,
+        "palabrasUnicas": 15,
+        "palabrasLargas": 0,
+        "densidadPalabras": 16,
+        "longitudPromedioPalabra": 6.31
+      },
+      "palabrasMasComunes": [
+        {
+          "palabra": "de",
+          "frecuencia": 2
+        },
+        {
+          "palabra": "el",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "segundo",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "documento",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "tiene",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "contenido",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "diferente.",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "aquí",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "hablamos",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "node.js,",
+          "frecuencia": 1
+        }
+      ],
+      "fechaProcesamiento": "2025-12-11T20:51:41.652Z"
+    },
+    "fechaIndexacion": "2025-12-11T20:51:41.653Z"
+  }
+}

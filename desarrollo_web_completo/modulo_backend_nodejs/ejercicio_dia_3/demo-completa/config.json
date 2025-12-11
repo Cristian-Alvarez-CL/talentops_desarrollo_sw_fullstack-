@@ -1,0 +1,11 @@
+{
+  "sistema": "ProcesadorArchivos",
+  "version": "2.0.0",
+  "caracteristicas": [
+    "backup",
+    "busqueda",
+    "cli",
+    "procesamiento"
+  ],
+  "autor": "Equipo Desarrollo"
+}

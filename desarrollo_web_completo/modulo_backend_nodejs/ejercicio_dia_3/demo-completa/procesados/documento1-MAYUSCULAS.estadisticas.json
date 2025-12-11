@@ -1,0 +1,58 @@
+{
+  "archivo": "documento1-MAYUSCULAS.txt",
+  "ruta": "demo-completa/documento1-MAYUSCULAS.txt",
+  "tipo": "texto",
+  "estadisticas": {
+    "lineas": 1,
+    "palabras": 18,
+    "caracteres": 118,
+    "oraciones": 2,
+    "palabrasUnicas": 16,
+    "palabrasLargas": 2,
+    "densidadPalabras": 18,
+    "longitudPromedioPalabra": 5.61
+  },
+  "palabrasMasComunes": [
+    {
+      "palabra": "el",
+      "frecuencia": 2
+    },
+    {
+      "palabra": "de",
+      "frecuencia": 2
+    },
+    {
+      "palabra": "este",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "es",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "primer",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "documento",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "prueba",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "para",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "sistema",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "procesamiento.",
+      "frecuencia": 1
+    }
+  ],
+  "fechaProcesamiento": "2025-12-11T20:51:41.645Z"
+}

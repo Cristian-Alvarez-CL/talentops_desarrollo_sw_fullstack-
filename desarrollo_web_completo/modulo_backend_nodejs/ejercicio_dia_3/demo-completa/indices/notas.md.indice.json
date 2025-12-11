@@ -1,0 +1,92 @@
+{
+  "id": "notas.md",
+  "ruta": "demo-completa/notas.md",
+  "contenido": "# Notas Importantes\n\n## Tareas Pendientes\n1. Aprender principios SOLID\n2. Implementar sistema de backup\n3. Crear interfaz CLI\n\n## Conceptos Clave\n- Programación Orientada a Objetos\n- Streams en Node.js\n- Indexación de contenido",
+  "tokens": 22,
+  "frecuencia": {
+    "nota": 1,
+    "importante": 1,
+    "tarea": 1,
+    "pendiente": 1,
+    "aprender": 1,
+    "principio": 1,
+    "solid": 1,
+    "implementar": 1,
+    "sistema": 1,
+    "backup": 1,
+    "crear": 1,
+    "interfaz": 1,
+    "cli": 1,
+    "concepto": 1,
+    "clave": 1,
+    "programación": 1,
+    "orientada": 1,
+    "objeto": 1,
+    "streams": 1,
+    "node": 1,
+    "indexación": 1,
+    "contenido": 1
+  },
+  "metadatos": {
+    "procesado": true,
+    "estadisticas": {
+      "archivo": "notas.md",
+      "ruta": "demo-completa/notas.md",
+      "tipo": "texto",
+      "estadisticas": {
+        "lineas": 11,
+        "palabras": 35,
+        "caracteres": 227,
+        "oraciones": 5,
+        "palabrasUnicas": 31,
+        "palabrasLargas": 3,
+        "densidadPalabras": 3.18,
+        "longitudPromedioPalabra": 5.46
+      },
+      "palabrasMasComunes": [
+        {
+          "palabra": "-",
+          "frecuencia": 3
+        },
+        {
+          "palabra": "##",
+          "frecuencia": 2
+        },
+        {
+          "palabra": "de",
+          "frecuencia": 2
+        },
+        {
+          "palabra": "#",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "notas",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "importantes",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "tareas",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "pendientes",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "1.",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "aprender",
+          "frecuencia": 1
+        }
+      ],
+      "fechaProcesamiento": "2025-12-11T20:51:41.655Z"
+    },
+    "fechaIndexacion": "2025-12-11T20:51:41.657Z"
+  }
+}

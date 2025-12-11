@@ -1,0 +1,81 @@
+{
+  "id": "documento1.txt",
+  "ruta": "demo-completa/documento1.txt",
+  "contenido": "Este es el primer documento de prueba para el sistema de procesamiento. Contiene varias palabras y frases importantes.",
+  "tokens": 11,
+  "frecuencia": {
+    "este": 1,
+    "primer": 1,
+    "documento": 1,
+    "prueba": 1,
+    "sistema": 1,
+    "procesamiento": 1,
+    "contiene": 1,
+    "varia": 1,
+    "palabra": 1,
+    "frase": 1,
+    "importante": 1
+  },
+  "metadatos": {
+    "procesado": true,
+    "estadisticas": {
+      "archivo": "documento1.txt",
+      "ruta": "demo-completa/documento1.txt",
+      "tipo": "texto",
+      "estadisticas": {
+        "lineas": 1,
+        "palabras": 18,
+        "caracteres": 118,
+        "oraciones": 2,
+        "palabrasUnicas": 16,
+        "palabrasLargas": 2,
+        "densidadPalabras": 18,
+        "longitudPromedioPalabra": 5.61
+      },
+      "palabrasMasComunes": [
+        {
+          "palabra": "el",
+          "frecuencia": 2
+        },
+        {
+          "palabra": "de",
+          "frecuencia": 2
+        },
+        {
+          "palabra": "este",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "es",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "primer",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "documento",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "prueba",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "para",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "sistema",
+          "frecuencia": 1
+        },
+        {
+          "palabra": "procesamiento.",
+          "frecuencia": 1
+        }
+      ],
+      "fechaProcesamiento": "2025-12-11T20:51:41.649Z"
+    },
+    "fechaIndexacion": "2025-12-11T20:51:41.649Z"
+  }
+}

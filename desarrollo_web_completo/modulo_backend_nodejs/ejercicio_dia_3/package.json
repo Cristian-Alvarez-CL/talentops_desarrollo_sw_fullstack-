@@ -1,0 +1,24 @@
+{
+  "name": "procesador-archivos",
+  "version": "2.0.0",
+  "description": "Sistema avanzado de procesamiento de archivos",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "demo": "node demos/demo-completa.js",
+    "cli": "node cli.js",
+    "test": "node test/test-integracion.js"
+  },
+  "dependencies": {
+    "commander": "^11.1.0"
+  },
+  "keywords": [
+    "filesystem",
+    "processing",
+    "backup",
+    "search",
+    "cli"
+  ],
+  "author": "Sistema Archivos",
+  "license": "MIT"
+}

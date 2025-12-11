@@ -1,0 +1,62 @@
+{
+  "fechaGeneracion": "2025-12-11T20:51:23.854Z",
+  "totalArchivos": 4,
+  "resumen": {
+    "totalLineas": 13,
+    "totalPalabras": 69,
+    "totalCaracteres": 461,
+    "archivosPorTipo": {
+      "JSON": 1,
+      "texto": 3
+    }
+  },
+  "archivos": [
+    {
+      "archivo": "config.json",
+      "tipo": "JSON",
+      "estadisticas": {}
+    },
+    {
+      "archivo": "documento1.txt",
+      "tipo": "texto",
+      "estadisticas": {
+        "lineas": 1,
+        "palabras": 18,
+        "caracteres": 118,
+        "oraciones": 2,
+        "palabrasUnicas": 16,
+        "palabrasLargas": 2,
+        "densidadPalabras": 18,
+        "longitudPromedioPalabra": 5.61
+      }
+    },
+    {
+      "archivo": "documento2.txt",
+      "tipo": "texto",
+      "estadisticas": {
+        "lineas": 1,
+        "palabras": 16,
+        "caracteres": 116,
+        "oraciones": 3,
+        "palabrasUnicas": 15,
+        "palabrasLargas": 0,
+        "densidadPalabras": 16,
+        "longitudPromedioPalabra": 6.31
+      }
+    },
+    {
+      "archivo": "notas.md",
+      "tipo": "texto",
+      "estadisticas": {
+        "lineas": 11,
+        "palabras": 35,
+        "caracteres": 227,
+        "oraciones": 5,
+        "palabrasUnicas": 31,
+        "palabrasLargas": 3,
+        "densidadPalabras": 3.18,
+        "longitudPromedioPalabra": 5.46
+      }
+    }
+  ]
+}

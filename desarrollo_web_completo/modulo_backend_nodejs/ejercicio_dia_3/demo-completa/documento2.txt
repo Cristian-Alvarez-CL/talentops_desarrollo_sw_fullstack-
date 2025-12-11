@@ -1,0 +1,1 @@
+El segundo documento tiene contenido diferente. Aquí hablamos de Node.js, streams, y sistemas de archivos avanzados.

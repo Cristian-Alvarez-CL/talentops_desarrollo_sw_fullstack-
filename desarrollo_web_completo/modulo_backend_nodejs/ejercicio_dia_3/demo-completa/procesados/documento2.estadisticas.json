@@ -1,0 +1,58 @@
+{
+  "archivo": "documento2.txt",
+  "ruta": "demo-completa/documento2.txt",
+  "tipo": "texto",
+  "estadisticas": {
+    "lineas": 1,
+    "palabras": 16,
+    "caracteres": 116,
+    "oraciones": 3,
+    "palabrasUnicas": 15,
+    "palabrasLargas": 0,
+    "densidadPalabras": 16,
+    "longitudPromedioPalabra": 6.31
+  },
+  "palabrasMasComunes": [
+    {
+      "palabra": "de",
+      "frecuencia": 2
+    },
+    {
+      "palabra": "el",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "segundo",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "documento",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "tiene",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "contenido",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "diferente.",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "aquí",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "hablamos",
+      "frecuencia": 1
+    },
+    {
+      "palabra": "node.js,",
+      "frecuencia": 1
+    }
+  ],
+  "fechaProcesamiento": "2025-12-11T20:51:41.652Z"
+}
