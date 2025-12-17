@@ -1,0 +1,17 @@
+{
+  "name": "api-rest-basica",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node servidor-express.js",
+    "dev": "nodemon servidor-express.js",
+    "test": "node test-api.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "joi": "^18.0.2",
+    "json2csv": "^6.0.0-alpha.2",
+    "nodemon": "^3.1.11",
+    "winston": "^3.19.0"
+  }
+}
