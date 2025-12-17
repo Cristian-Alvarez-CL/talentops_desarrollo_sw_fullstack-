@@ -1,0 +1,20 @@
+{
+  "name": "middleware-express",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node app-completa-middleware.js",
+    "dev": "nodemon app-completa-middleware.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "i18next": "^25.7.3",
+    "i18next-http-middleware": "^3.9.1",
+    "joi": "^18.0.2",
+    "nodemon": "^3.1.11"
+  }
+}
