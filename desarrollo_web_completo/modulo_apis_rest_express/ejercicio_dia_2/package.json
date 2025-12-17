@@ -1,7 +1,7 @@
 {
   "name": "middleware-express",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "app-completa-middleware.js",
   "scripts": {
     "start": "node app-completa-middleware.js",
     "dev": "nodemon app-completa-middleware.js",

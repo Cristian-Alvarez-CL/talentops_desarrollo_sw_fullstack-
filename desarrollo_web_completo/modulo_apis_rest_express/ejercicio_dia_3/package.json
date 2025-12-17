@@ -1,0 +1,19 @@
+{
+  "name": "api-rest-completa",
+  "version": "1.0.0",
+  "main": "api-rest-completa.js",
+  "scripts": {
+    "start": "node api-rest-completa.js",
+    "dev": "nodemon api-rest-completa.js",
+    "test": "NODE_ENV=test jest test.js --forceExit"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "supertest": "^7.1.4"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "nodemon": "^3.1.11"
+  }
+}
