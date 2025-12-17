@@ -1,0 +1,16 @@
+[
+  {
+    "id": "u1",
+    "username": "admin",
+    "password": "$2b$10$4zk5S7QpO1aL4Bw/seIq5OBP68qhnBNa19I13HLCjY80lXHbksDhe",
+    "role": "admin",
+    "email": "admin@blog.com"
+  },
+  {
+    "id": "u2",
+    "username": "autor_tech",
+    "password": "$2b$10$4zk5S7QpO1aL4Bw/seIq5OBP68qhnBNa19I13HLCjY80lXHbksDhe",
+    "role": "autor",
+    "email": "autor@blog.com"
+  }
+]

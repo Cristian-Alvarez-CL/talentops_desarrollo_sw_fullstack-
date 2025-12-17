@@ -1,0 +1,20 @@
+[
+  {
+    "id": "c1",
+    "postId": "p1",
+    "userId": "u2",
+    "userEmail": "lector@ejemplo.com",
+    "content": "Excelente artículo sobre Node.js",
+    "status": "approved",
+    "votes": 2
+  },
+  {
+    "id": "c2",
+    "postId": "p3",
+    "userId": "u2",
+    "userEmail": "critico@ejemplo.com",
+    "content": "No estoy de acuerdo con el punto 3.",
+    "status": "pending",
+    "votes": 0
+  }
+]
