@@ -180,10 +180,3 @@ CREATE TABLE inventario_movimientos (
 );
 
 CREATE INDEX idx_inventario_producto_fecha ON inventario_movimientos (id_producto, fecha_movimiento DESC);
-
--- Mensaje final
-DO $$ 
-BEGIN
-    RAISE NOTICE '✅ Esquema de e-commerce creado exitosamente en 3FN para PostgreSQL!';
-    RAISE NOTICE '✅ Base de datos: ttops_sql_practice';
-END $$;
