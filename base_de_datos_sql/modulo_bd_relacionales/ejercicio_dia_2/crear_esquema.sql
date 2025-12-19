@@ -1,17 +1,16 @@
 -- Tabla de libros
 CREATE TABLE libros (
-    libro_id INT PRIMARY KEY,
+    libro_id SERIAL PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
     autor VARCHAR(255) NOT NULL,
     isbn VARCHAR(20),
-    ejemplares_totales INT NOT NULL,
-    ejemplares_disponibles INT NOT NULL
+    ejemplares_totales INTEGER NOT NULL CHECK (ejemplares_totales >= 0),
+    ejemplares_disponibles INTEGER NOT NULL CHECK (ejemplares_disponibles >= 0)
 );
 
 -- Tabla de usuarios
-CREATE AUTO_INCREMENT = 1;
 CREATE TABLE usuarios (
-    usuario_id INT PRIMARY KEY,
+    usuario_id SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE,
     telefono VARCHAR(20)
@@ -19,45 +18,36 @@ CREATE TABLE usuarios (
 
 -- Tabla de préstamos
 CREATE TABLE prestamos (
-    prestamo_id INT PRIMARY KEY,
-    libro_id INT,
-    usuario_id INT,
+    prestamo_id SERIAL PRIMARY KEY,
+    libro_id INTEGER NOT NULL,
+    usuario_id INTEGER NOT NULL,
     fecha_prestamo DATE NOT NULL,
     fecha_devolucion_prevista DATE NOT NULL,
     fecha_devolucion_real DATE,
-    FOREIGN KEY (libro_id) REFERENCES libros(libro_id),
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id)
+    FOREIGN KEY (libro_id) REFERENCES libros(libro_id) ON DELETE RESTRICT,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id) ON DELETE RESTRICT
 );
 
-INSERT INTO libros (libro_id, titulo, autor, isbn, ejemplares_totales, ejemplares_disponibles) VALUES
-(1, 'Cien años de soledad', 'Gabriel García Márquez', '978-0307474728', 3, 1),
-(2, 'La ciudad y los perros', 'Mario Vargas Llosa', '978-8466333865', 2, 2),
-(3, 'Rayuela', 'Julio Cortázar', '978-9500701273', 2, 0),
-(4, 'El amor en los tiempos del cólera', 'Gabriel García Márquez', '978-0307474711', 1, 1),
-(5, 'Ficciones', 'Jorge Luis Borges', '978-0307474735', 2, 2);
+-- Libros
+INSERT INTO libros (titulo, autor, isbn, ejemplares_totales, ejemplares_disponibles) VALUES
+('Cien años de soledad', 'Gabriel García Márquez', '978-0307474728', 3, 1),
+('La ciudad y los perros', 'Mario Vargas Llosa', '978-8466333865', 2, 2),
+('Rayuela', 'Julio Cortázar', '978-9500701273', 2, 0),
+('El amor en los tiempos del cólera', 'Gabriel García Márquez', '978-0307474711', 1, 1),
+('Ficciones', 'Jorge Luis Borges', '978-0307474735', 2, 2);
 
-INSERT INTO usuarios (usuario_id, nombre, email, telefono) VALUES
-(101, 'Ana López', 'ana.lopez@email.com', '555-1234'),
-(102, 'Carlos Méndez', 'carlos.mendez@email.com', '555-5678'),
-(103, 'Laura Gómez', 'laura.gomez@email.com', '555-9012'),
-(104, 'Diego Ruiz', 'diego.ruiz@email.com', '555-3456');
+-- Usuarios
+INSERT INTO usuarios (nombre, email, telefono) VALUES
+('Ana López', 'ana.lopez@email.com', '555-1234'),
+('Carlos Méndez', 'carlos.mendez@email.com', '555-5678'),
+('Laura Gómez', 'laura.gomez@email.com', '555-9012'),
+('Diego Ruiz', 'diego.ruiz@email.com', '555-3456');
 
-INSERT INTO prestamos (prestamo_id, libro_id, usuario_id, fecha_prestamo, fecha_devolucion_prevista, fecha_devolucion_real) VALUES
--- Préstamo activo (no vencido)
-(1001, 1, 101, '2025-12-01', '2025-12-15', NULL),
-
--- Préstamo vencido y aún no devuelto (multa pendiente)
-(1002, 3, 102, '2025-11-10', '2025-11-24', NULL),
-
--- Préstamo devuelto con retraso (multa aplicada)
-(1003, 1, 103, '2025-11-05', '2025-11-19', '2025-11-25'),
-
--- Préstamo devuelto a tiempo
-(1004, 2, 104, '2025-12-05', '2025-12-19', '2025-12-18'),
-
--- Préstamo activo y ya vencido (hoy es 2025-12-20)
-(1005, 3, 101, '2025-11-28', '2025-12-12', NULL),
-
--- Préstamo reciente (activo, no vencido)
-(1006, 4, 102, '2025-12-18', '2026-01-01', NULL);
-
+-- Préstamos
+INSERT INTO prestamos (libro_id, usuario_id, fecha_prestamo, fecha_devolucion_prevista, fecha_devolucion_real) VALUES
+(1, 1, '2025-12-01', '2025-12-15', NULL),
+(3, 2, '2025-11-10', '2025-11-24', NULL),
+(1, 3, '2025-11-05', '2025-11-19', '2025-11-25'),
+(2, 4, '2025-12-05', '2025-12-19', '2025-12-18'),
+(3, 1, '2025-11-28', '2025-12-12', NULL),
+(4, 2, '2025-12-18', '2026-01-01', NULL);
