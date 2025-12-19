@@ -1,4 +1,4 @@
-s-- crear_db.sql
+-- crear_db.sql
 -- Ejecutar con: psql -U postgres -d postgres -f crear_db.sql
 
 DROP DATABASE IF EXISTS ttops_sql_practice_biblioteca;
