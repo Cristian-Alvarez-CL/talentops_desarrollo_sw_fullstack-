@@ -1,0 +1,19 @@
+{
+  "name": "proyecto_practico_inventario",
+  "version": "1.0.0",
+  "description": "",
+  "main": "init-inventory-system.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bwip-js": "^4.8.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mysql2": "^3.16.0",
+    "nodemailer": "^7.0.12"
+  }
+}

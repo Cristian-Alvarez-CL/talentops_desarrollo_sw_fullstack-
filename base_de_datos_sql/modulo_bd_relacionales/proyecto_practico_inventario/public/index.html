@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Inventario Pro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📦 Gestión de Inventario</h1>
+            <nav>
+                <button onclick="showTab('dashboard')" class="active">Dashboard</button>
+                <button onclick="showTab('productos')">Productos</button>
+                <button onclick="showTab('ordenes')">Órdenes de Compra</button>
+            </nav>
+        </header>
+
+        <section id="dashboard" class="tab-content active">
+            <div class="stats-grid">
+                <div class="card">
+                    <h3>Productos Activos</h3>
+                    <p id="stat-activos" class="big-number">-</p>
+                </div>
+                <div class="card alert">
+                    <h3>Stock Bajo</h3>
+                    <p id="stat-bajo" class="big-number">-</p>
+                </div>
+                <div class="card">
+                    <h3>Órdenes Pendientes</h3>
+                    <p id="stat-ordenes" class="big-number">-</p>
+                </div>
+            </div>
+            <h2>Movimientos Recientes</h2>
+            <table id="tabla-movimientos">
+                <thead><tr><th>Fecha</th><th>Producto</th><th>Tipo</th><th>Cant</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="productos" class="tab-content">
+            <div class="toolbar">
+                <button onclick="cargarProductos()">🔄 Refrescar</button>
+                <button onclick="mostrarCrearProducto()">➕ Nuevo Producto</button>
+            </div>
+            <table id="tabla-productos">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Stock</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="ordenes" class="tab-content">
+            <div class="toolbar">
+                <button onclick="cargarOrdenes()">🔄 Refrescar</button>
+                <button onclick="mostrarCrearOrden()">➕ Nueva Orden</button>
+            </div>
+            
+            <div id="form-orden" style="display:none; background:#f0f0f0; padding:15px; margin-bottom:15px;">
+                <h3>Nueva Orden de Compra</h3>
+                <select id="select-proveedor"></select>
+                <input type="date" id="fecha-entrega">
+                <div id="items-orden">
+                    </div>
+                <button onclick="agregarItemOrden()">+ Agregar Producto</button>
+                <button onclick="guardarOrden()" class="primary">Guardar Orden</button>
+                <button onclick="document.getElementById('form-orden').style.display='none'">Cancelar</button>
+            </div>
+
+            <table id="tabla-ordenes">
+                <thead>
+                    <tr>
+                        <th>N° Orden</th>
+                        <th>Proveedor</th>
+                        <th>Estado</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </div>
+
+    <div id="modal-barcode" class="modal" onclick="this.style.display='none'">
+        <div class="modal-content">
+            <h3>Etiqueta de Producto</h3>
+            <img id="barcode-img" src="" alt="Barcode">
+            <p>Click para cerrar</p>
+        </div>
+    </div>
+
+    <script src="app-client.js"></script>
+</body>
+</html>
